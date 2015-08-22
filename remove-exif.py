@@ -14,6 +14,14 @@ def isJPEG(filename):
         return False
 
 
+usageString = """
+Usage:
+    ./remove-exif.py name.jpg
+    ./remove-exif.py *.jpg
+"""
+if len(sys.argv) == 1:
+    print(usageString)
+
 for arg in sys.argv[1:]:
     if isJPEG(arg) == True:
         piexif.remove(arg)
